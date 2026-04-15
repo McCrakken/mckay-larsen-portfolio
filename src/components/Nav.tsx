@@ -17,7 +17,7 @@ export default function Nav() {
         {/* Logo / Name */}
         <a
           href="#hero"
-          className="font-display text-xl font-semibold text-slate-900 dark:text-white tracking-tight hover:text-[#378ADD] transition-colors"
+          className="font-display text-xl font-semibold text-slate-900 dark:text-white tracking-tight hover:text-accent transition-colors"
         >
           McKay Larsen
         </a>
@@ -28,7 +28,7 @@ export default function Nav() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-[#378ADD] dark:hover:text-[#378ADD] transition-colors"
+                className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-accent dark:hover:text-accent transition-colors"
               >
                 {l.label}
               </a>
@@ -38,7 +38,7 @@ export default function Nav() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden p-2 rounded-md text-slate-600 dark:text-slate-400 hover:text-[#378ADD] transition-colors"
+          className="md:hidden p-2 rounded-md text-slate-600 dark:text-slate-400 hover:text-accent transition-colors"
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle menu"
         >
@@ -63,7 +63,7 @@ export default function Nav() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-[#378ADD] transition-colors"
+                className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-accent transition-colors"
                 onClick={() => setOpen(false)}
               >
                 {l.label}
