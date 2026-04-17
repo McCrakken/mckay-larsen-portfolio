@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ExampleCaseStudy from './pages/case-studies/template/ExampleCaseStudy.tsx';
 import AngularAdminPortalHardening from "./pages/case-studies/koin/AngularAdminPortalHardening.tsx";
+import CaseStudiesLanding from './pages/case-studies/CaseStudiesLanding.tsx';
 
 function PortfolioHome() {
   return (
@@ -29,6 +30,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<PortfolioHome />} />
+      <Route path="/case-studies" element={<CaseStudiesLanding />} />
       <Route path="/case-studies/example" element={<ExampleCaseStudy />} />
       <Route path={"/case-studies/koin/angular-portal-hardening"} element={<AngularAdminPortalHardening />} />
       {/* Add additional case study routes here */}

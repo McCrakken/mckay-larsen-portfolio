@@ -36,17 +36,50 @@ const data: CaseStudy = {
   challenges: [
     {
       title: 'Challenge One',
-      description:
-        'Describe the first technical or organizational hurdle you had to clear and why it was difficult.',
+      breakdown: {
+        title: 'Challenge Breakdown',
+        elements: [
+          'Describe the first technical or organizational hurdle you had to clear.',
+          'Explain why it was difficult and what made it unique.',
+        ],
+      },
+      highlight: {
+        title: 'Key Insight',
+        text: 'The most important takeaway or resolution from this challenge.',
+      },
     },
     {
       title: 'Challenge Two',
-      description:
-        'Another distinct obstacle — keep each challenge focused on a single theme.',
+      breakdown: {
+        title: 'Challenge Breakdown',
+        elements: [
+          'Another distinct obstacle — keep each challenge focused on a single theme.',
+          'Describe what you did to overcome it.',
+        ],
+      },
+      highlight: {
+        title: 'Key Insight',
+        text: 'The most important takeaway or resolution from this challenge.',
+      },
     },
   ],
-  approach:
-    'Walk through the reasoning behind your architectural or strategic choices. What options did you weigh, and why did you go the direction you did?',
+  approach: [
+    {
+      title: 'Strategic Approach',
+      description:
+        'Walk through the reasoning behind your architectural or strategic choices. What options did you weigh, and why did you go the direction you did?',
+      sections: [
+        {
+          title: 'Approach Details',
+          elements: [
+            'Describe the first major step or decision in your approach.',
+            'Explain a key tradeoff you navigated.',
+          ],
+        },
+      ],
+      summary: 'Summarize the overall approach and why it was the right choice.',
+    },
+  ],
   implementationHighlights: [
     'A concrete technical achievement worth calling out.',
     'Another noteworthy implementation detail or pattern you introduced.',

@@ -29,7 +29,7 @@ const angularAdminPortalHardening: CaseStudy = {
       ],
       summary: 'The challenge was not just fixing individual issues—it was systematically reducing risk across the entire application without breaking functionality.'
     },
-    role:{
+    role: {
       description: 'I led the effort to remediate vulnerabilities and modernize the frontend architecture.',
       sections: [
         {
@@ -103,21 +103,77 @@ const angularAdminPortalHardening: CaseStudy = {
           },
         },
       ],
-    approach:
-      'Walk through the reasoning behind your architectural or strategic choices. What options did you weigh, and why did you go the direction you did?',
+    approach: [
+      {
+        title: '1. Risk-Based Prioritization',
+        sections: [
+          {
+            title: 'Instead of addressing vulnerabilities linearly, I grouped them by:',
+            elements: [
+              'Severity (exploitability, exposure)',
+              'Surface area (public vs internal)',
+              'Dependency vs application-level issues',
+            ]
+          },
+          {
+            title: 'This allowed us to:',
+            elements: [
+              'Eliminate high-risk vulnerabilities early',
+              'Reduce overall exposure quickly'
+            ]
+          }
+        ]
+      },
+      {
+        title: '2. Incremental Refactoring Over Big Bang Rewrite',
+        description: 'A full rewrite would have been safer in theory—but unrealistic.',
+        sections: [
+          {
+            title: 'Instead:',
+            elements: [
+              'Identified high-risk modules (auth, data handling)',
+              'Refactored them incrementally into more modular patterns',
+              'Introduced clearer boundaries between components',
+            ]
+          },
+        ],
+        code: `// Before: Fragile, tightly coupled authentication
+@Component({ ... })
+export class HeaderComponent {
+  login() {
+    this.http.post('/auth', { user: this.u, pass: this.p })
+      .subscribe(res => localStorage.setItem('token', res.token));
+  }
+}
+
+// After: Centralized, audited Auth Service with Secure Storage
+@Injectable({ providedIn: 'root' })
+export class AuthService {
+  login(creds: Credentials): Observable<User> {
+    return this.http.post<AuthResponse>('/auth/v2/login', creds).pipe(
+      map(res => this.secureSession.initialize(res)),
+      catchError(err => this.auditLog.error('auth_failed', err))
+    );
+  }
+}`,
+        language: 'typescript',
+        summary: 'This transition to a service-based architecture allowed us to apply security fixes in one place rather than across dozens of components.'
+      },
+    ],
     implementationHighlights:
       [
-        'A concrete technical achievement worth calling out.',
-        'Another noteworthy implementation detail or pattern you introduced.',
-        'A third highlight — metrics, performance wins, and tooling improvements all work well here.',
+        'Integrated automated vulnerability scanning (Snyk) into the CI/CD pipeline to catch issues before they reach production.',
+        'Established a custom Content Security Policy (CSP) and automated security header injection, mitigating common XSS and clickjacking vectors.',
+        'Created a standardized, audited library of UI components for data handling, ensuring consistent input sanitization and output encoding.',
+        'Developed a staged dependency upgrade strategy that allowed for updating critical packages without causing widespread regressions.',
       ],
     outcomeAndImpact:
-      'Quantify the result wherever possible — latency reduced by X%, churn dropped, revenue grew. Then add any qualitative impact on team culture or process.',
+      'The hardening initiative reduced total vulnerabilities from 600+ to zero high/medium risks in less than four months. This successful remediation allowed the company to pass a rigorous external security audit from a Fortune 500 partner, unblocking a multi-year contract and directly enabling the product’s entry into the enterprise market.',
     keyTakeaways:
       [
-        'The single most important lesson you would carry into the next project.',
-        'A secondary insight about people, process, or technology.',
-        'Anything else that crystallized for you through this experience.',
+        'Security must be a first-class citizen in the development lifecycle, not an afterthought or a one-time "hardening" phase.',
+        'Prioritizing based on exploitability and business impact is essential when dealing with massive technical debt.',
+        'Infrastructure and architectural clarity are often the best defense against security risks in legacy systems.',
       ],
   }
 ;

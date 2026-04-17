@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import type { Project } from '../types';
 
 const badgeColors: Record<string, string> = {
@@ -13,7 +14,7 @@ interface Props {
 }
 
 export default function ProjectCard({ project }: Props) {
-  const { title, description, badge, tags, link } = project;
+  const { title, description, badge, tags, link, caseStudyUrl } = project;
 
   return (
     <motion.article
@@ -55,17 +56,27 @@ export default function ProjectCard({ project }: Props) {
         ))}
       </div>
 
-      {/* Optional link */}
-      {link && (
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xs font-medium text-[#378ADD] hover:underline"
-        >
-          View project →
-        </a>
-      )}
+      {/* Optional links */}
+      <div className="flex items-center gap-4">
+        {link && (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs font-medium text-[#378ADD] hover:underline"
+          >
+            View project →
+          </a>
+        )}
+        {caseStudyUrl && (
+          <Link
+            to={caseStudyUrl}
+            className="text-xs font-medium text-accent hover:underline"
+          >
+            Read case study →
+          </Link>
+        )}
+      </div>
     </motion.article>
   );
 }

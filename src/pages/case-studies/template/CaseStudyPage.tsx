@@ -7,6 +7,8 @@ import {SectionHeading} from "./components/SectionHeader.tsx";
 import {Tag} from "./components/Tag.tsx";
 import {fadeUp, stagger} from "./utils.ts";
 import {Callout} from "./components/Callout.tsx";
+import Nav from "../../../components/Nav.tsx";
+import Footer from "../../../components/Footer.tsx";
 
 interface CaseStudyPageProps {
   caseStudy: CaseStudy;
@@ -29,11 +31,12 @@ export default function CaseStudyPage({caseStudy}: CaseStudyPageProps) {
 
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-700 dark:text-slate-300 font-sans">
+      <Nav />
 
       {/* ── Back nav ── */}
       <div className="max-w-3xl mx-auto px-6 pt-8">
         <Link
-          to="/"
+          to="/case-studies"
           className="inline-flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-accent dark:hover:text-accent transition-colors"
         >
           <svg
@@ -49,7 +52,7 @@ export default function CaseStudyPage({caseStudy}: CaseStudyPageProps) {
           >
             <path d="M19 12H5M12 19l-7-7 7-7"/>
           </svg>
-          Back to portfolio
+          Back to Case Studies
         </Link>
       </div>
 
@@ -105,7 +108,9 @@ export default function CaseStudyPage({caseStudy}: CaseStudyPageProps) {
         {/* ── Approach & Key Decisions ── */}
         <motion.section variants={fadeUp}>
           <SectionHeading>Approach &amp; Key Decisions</SectionHeading>
-          <p className="text-base md:text-lg leading-relaxed">{approach}</p>
+          {approach.map(section => {
+            return <SectionBlock section={section} title={section.title} />
+          })}
         </motion.section>
 
         <SectionDivider/>
@@ -151,6 +156,7 @@ export default function CaseStudyPage({caseStudy}: CaseStudyPageProps) {
           </ul>
         </motion.section>
       </motion.article>
+      <Footer />
     </div>
   );
 }

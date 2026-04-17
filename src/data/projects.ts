@@ -33,6 +33,7 @@ export const projects: Project[] = [
             'Reduced attack surface significantly, enabling the product to pass third-party security audits required for enterprise clients.',
         ],
         tags: ['Angular', 'TypeScript', 'Security', 'OWASP', 'Refactoring'],
+        caseStudyUrl: '/case-studies/koin/angular-portal-hardening',
     },
     {
         id: 'educator-platform',
