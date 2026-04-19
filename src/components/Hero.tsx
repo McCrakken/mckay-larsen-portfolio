@@ -45,7 +45,7 @@ export default function Hero() {
           variants={item}
           className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed"
         >
-          Building products people actually use.
+          Less friction, more flow: Building software with the mind in mind.
         </motion.p>
 
         <motion.div variants={item} className="flex flex-wrap gap-2">

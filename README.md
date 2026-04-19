@@ -1,4 +1,16 @@
-# McKay Larsen — Portfolio
+# McKay Larsen | Frontend Engineer & UX Strategist
+
+I am a React-specialized Frontend Engineer with over 8 years of experience building high-stakes web and mobile applications across fintech, identity security, and enterprise SaaS. My work is uniquely informed by a dual background in **Software Engineering** and **Psychology**, allowing me to bridge technical architecture with human behavior to create intuitive, friction-less user experiences.
+
+### Key Highlights
+- **React & TypeScript Expert:** 8+ years shipping production code in the React ecosystem, including React Native for cross-platform mobile.
+- **Psychology-Driven UX:** Published researcher on behavioral science, applying psychological principles to reduce user friction and improve engagement.
+- **Proven Impact:** Led security hardening for legacy systems (eliminating 600+ vulnerabilities) and engineered enterprise-scale MFA platforms at OpenText.
+- **Regulated Industry Experience:** Licensed by the Nevada Gaming Control Board for work in high-security, regulated environments.
+
+---
+
+# Portfolio Project
 
 A personal portfolio site built to communicate not just what I can build, but *how* I think. Beyond showcasing projects, it aims to give visitors a window into my problem-solving process with the reasoning, trade-offs, and decisions that go into the work.
 
