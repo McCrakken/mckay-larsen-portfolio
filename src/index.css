@@ -5,8 +5,18 @@
 @theme {
   --font-display: "DM Serif Display", Georgia, serif;
   --font-sans: "DM Sans", system-ui, sans-serif;
-  --color-accent: #378ADD;
-  --color-accent-dark: #2a6db8;
+
+  /* ── Teal accent palette ───────────────────────────────────────── */
+  --color-accent:      #0d9488; /* teal-600  — primary CTA / highlights  */
+  --color-accent-dark: #0f766e; /* teal-700  — hover state               */
+  --color-accent-light:#5eead4; /* teal-300  — light tints / glows       */
+
+  /* ── Surface overrides (lighter dark mode) ─────────────────────── */
+  --color-surface:      #ffffff;
+  --color-surface-dark: #0f2a2a; /* deep teal-tinted dark instead of pure slate-950 */
+
+  /*--color-accent: #378ADD;*/
+  /*--color-accent-dark: #2a6db8;*/
 }
 
 html {

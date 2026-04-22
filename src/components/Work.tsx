@@ -22,7 +22,7 @@ export default function Work() {
       <div className="max-w-5xl mx-auto">
         {/* Section header */}
         <div className="mb-12">
-          <p className="text-sm font-medium text-[#378ADD] tracking-widest uppercase mb-2">
+          <p className="text-sm font-medium text-accent tracking-widest uppercase mb-2">
             Selected Work
           </p>
           <h2 className="font-display text-4xl md:text-5xl text-slate-900 dark:text-white">

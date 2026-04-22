@@ -38,7 +38,7 @@ export default function ProjectCard({ project }: Props) {
       <ul className="flex flex-col gap-2 flex-1">
         {description.map((point, i) => (
           <li key={i} className="flex gap-2 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#378ADD] shrink-0" />
+            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
             {point}
           </li>
         ))}
@@ -63,7 +63,7 @@ export default function ProjectCard({ project }: Props) {
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs font-medium text-[#378ADD] hover:underline"
+            className="text-xs font-medium text-accent hover:underline"
           >
             View project →
           </a>
