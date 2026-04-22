@@ -1,4 +1,5 @@
 import {motion, type Variants} from 'framer-motion';
+import portfolioWip from '../assets/portfolio-wip.png';
 
 const techTags = ['TypeScript', 'React', 'React Native', 'Node.js', 'AWS'];
 
@@ -19,8 +20,21 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-[90vh] flex items-center justify-center px-6 py-24"
+      className="min-h-[90vh] flex flex-col items-center justify-center px-6 py-24 gap-10"
     >
+      {/* WIP Banner */}
+      <motion.div
+        initial={{ opacity: 0, y: -16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className="w-full max-w-3xl rounded-2xl overflow-hidden shadow-lg"
+      >
+        <img
+          src={portfolioWip}
+          alt="Portfolio under construction — site is a work in progress"
+          className="w-full h-auto object-cover"
+        />
+      </motion.div>
       <motion.div
         className="max-w-3xl w-full flex flex-col items-start gap-6"
         variants={container}
@@ -45,7 +59,7 @@ export default function Hero() {
           variants={item}
           className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed"
         >
-          Less friction, more flow: Building software with the mind in mind.
+          Less friction, more flow: Building software with the <span className="italic">mind</span> in mind.
         </motion.p>
 
         <motion.div variants={item} className="flex flex-wrap gap-2">
